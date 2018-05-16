@@ -15,10 +15,12 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:     Cocoa.Foundation.NSString
+                       Cocoa.Foundation.NSStringEncoding
   other-modules:       Cocoa.Foundation.NSString.Type
                        Cocoa.Foundation.NSString.Msg
   -- other-extensions:
   build-depends:       base >=4.10 && <4.11
                      , objc-runtime
+                     , bytestring
   hs-source-dirs:      src
   default-language:    Haskell2010
