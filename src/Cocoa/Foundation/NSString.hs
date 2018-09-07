@@ -43,7 +43,7 @@ copyFromText :: T.Text -> IO NSString
 copyFromText t =
     T.useAsPtr t (\p l -> stringWithCharacters (castPtr p) (fromIntegral l))
 
-copyToText :: NSString -> IO T.Text
+copyToText :: NSString -> IO (Maybe T.Text)
 copyToText nss = do
     utf16Len <- utf16Length nss
     let byteLen         = utf16Len * 2
