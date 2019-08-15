@@ -14,26 +14,54 @@ extra-source-files:  ChangeLog.md
 cabal-version:       >=1.10
 
 library
-  exposed-modules:     Cocoa.Foundation.NSString
-                       Cocoa.Foundation.NSStringEncoding
-  other-modules:       Cocoa.Foundation.NSString.Type
+  exposed-modules:     Cocoa.AppKit.NSApplication
+                       Cocoa.AppKit.NSApplication.Type
+                       Cocoa.AppKit.NSApplication.Msg
+                       Cocoa.AppKit.NSApplicationActivationPolicy
+                       Cocoa.AppKit.NSMenu
+                       Cocoa.AppKit.NSMenu.Type
+                       Cocoa.AppKit.NSMenu.Msg
+                       Cocoa.AppKit.NSMenuItem
+                       Cocoa.AppKit.NSMenuItem.Type
+                       Cocoa.AppKit.NSMenuItem.Msg
+                       Cocoa.Foundation.NSString
+                       Cocoa.Foundation.NSString.Type
                        Cocoa.Foundation.NSString.Msg
-  -- other-extensions:
-  build-depends:       base >=4.10 && <4.11
+                       Cocoa.Foundation.NSStringEncoding
+  -- other-modules:       Cocoa.Foundation.NSString.Type
+  --                      Cocoa.Foundation.NSString.Msg
+  --  other-extensions:
+  build-depends:       base >=4.10 && <5
                      , bytestring
                      , objc-runtime
                      , text
   hs-source-dirs:      src
   default-language:    Haskell2010
   extra-libraries:     objc
-  frameworks:          Foundation
+  frameworks:          AppKit
+                       Foundation
 
-executable instr
-  hs-source-dirs:   tests/instr
+executable HelloCocoa
+  hs-source-dirs:   hello-cocoa
+  main-is:          Main.hs
+  build-depends:    base
+                  , cocoa
+                  , objc-runtime
+                  , text
+  extra-libraries:  objc
+  frameworks:       AppKit
+                    Foundation
+  ghc-options:      -dynamic -threaded
+
+executable arc-instr-test
+  hs-source-dirs:   tests/arc-instr-test
   default-language: Haskell2010
   main-is:          Main.hs
   build-depends:    base
                   , cocoa
                   , objc-runtime
+                  , text
   extra-libraries:  objc
-  frameworks:       Foundation
+  frameworks:       AppKit
+                    Foundation
+  ghc-options:      -dynamic -threaded

@@ -12,8 +12,6 @@ import qualified Data.Text          as T
 import qualified Data.Text.Encoding as T
 import qualified Data.Text.Foreign  as T
 
-import Debug.Trace
-
 import Foreign.ForeignPtr
 import Foreign.Ptr
 

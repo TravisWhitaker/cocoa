@@ -4,11 +4,9 @@
            , TemplateHaskell
            #-}
 
-module Cocoa.Foundation.NSString.Type where
+module Cocoa.AppKit.NSMenuItem.Type where
 
 import Language.ObjC.NSObject
 
-newtype NSString = NSString (SomeNSObject "NSString")
-                 deriving (NSObject)
-
-$(requireLinkedClass "NSString")
+newtype NSMenuItem = NSMenuItem (SomeNSObject "NSApplication")
+                   deriving (NSObject)

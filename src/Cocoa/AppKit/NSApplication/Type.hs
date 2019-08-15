@@ -4,11 +4,9 @@
            , TemplateHaskell
            #-}
 
-module Cocoa.Foundation.NSString.Type where
+module Cocoa.AppKit.NSApplication.Type where
 
 import Language.ObjC.NSObject
 
-newtype NSString = NSString (SomeNSObject "NSString")
-                 deriving (NSObject)
-
-$(requireLinkedClass "NSString")
+newtype NSApplication = NSApplication (SomeNSObject "NSApplication")
+                      deriving (NSObject)
